@@ -1,0 +1,19 @@
+t = int(input())
+while t > 0:
+    n = int(input())
+    arr = list(map(int,input().split()))
+    list_1 = []
+    temp = 0
+    for i in range(n):
+        if arr[i] == 1:
+            list_1.append(i)
+    if len(list_1) > 1:
+        for i in range(1,len(list_1)):
+            if list_1[i] - list_1[i-1] < 6:
+                temp = 1
+                break
+    if temp == 1:
+        print("NO")
+    else:
+        print("YES")
+    t -= 1

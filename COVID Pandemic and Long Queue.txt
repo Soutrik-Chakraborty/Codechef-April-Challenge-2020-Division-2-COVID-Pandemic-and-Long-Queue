@@ -1,0 +1,20 @@
+t = int(input())
+for i in range(0, t):
+    n = int(input())
+    arr = list(map(int, input().strip().split()))[:n]
+    res_list = [i for i in range(0, len(arr)) if arr[i] == 1]
+    if(len(res_list) == 1):
+        print("YES")
+    elif(len(res_list) == 2 and max(res_list)-min(res_list) >= 6):
+        print("YES")
+    elif(len(res_list) == 2 and max(res_list)-min(res_list) < 6):
+        print("NO")
+    else:
+        sum = 0
+        for j in res_list:
+            if (j != max(res_list)):
+                sum = sum + j
+        if(max(res_list)-sum >= 6):
+            print("YES")
+        else:
+            print("No")
